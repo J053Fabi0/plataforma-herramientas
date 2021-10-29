@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Estructura del proyecto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+.
+└── /src
+    ├── /assets
+    ├── /components
+    ├── /utils
+    ├── /views
+    ├── /styles
+    ├── index.js
+    └── App.js
+```
 
-## Available Scripts
+### `assets`
+Fotos, logotipos, archivos, videos, etc.
 
-In the project directory, you can run:
 
-### `yarn start`
+### `components`
+Componentes que se pueden ocupar globalmente, genéricos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+El `index.js` es para poder importar los componentes en una sola línea:
+`import { TextField, Select, Radio } from '@components'`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+El `index.js` seguirá esta estructura:
+```
+import { TextField } from './TextField/TextField'
+import { Select } from './Select/Select'
+import { Radio } from './Radio/Radio'
 
-### `yarn test`
+export { TextField, Select, Radio }
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `utils`
+Funciones globales que hacen cosas muy genéricas, fáciles de reutilizar en diversos contextos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `views`
+Todas las páginas del sitio. Ej: El home o la de Contacto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `styles`
+Todos los archivos que exporten objetos que se puedan ocupar luego con JSS.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```js
+import Colors from '@styles/colors';
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+export default {
+  checkBox: {
+    display: "flex"
+  }
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### mixins.js
+<https://jarombek.com/blog/jun-30-2021-react-jss#mixins-for-reusable-styles>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Créditos
 
-## Learn More
+Basé la estructura en este blog: <https://www.taniarascia.com/react-architecture-directory-structure>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Librerías ocupadas
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## JSS
+Resumen de toda la sintaxis: <https://cssinjs.org/jss-syntax>.
 
-### Code Splitting
+Introducción práctica muy explicativa: <https://www.digitalocean.com/community/tutorials/how-to-style-react-components>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Otro tutorial: <https://jarombek.com/blog/jun-30-2021-react-jss>
 
-### Analyzing the Bundle Size
+## `react-app-rewired` y `react-app-rewired-alias`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Es para ocupar alias y pasar de
 
-### Making a Progressive Web App
+```js
+import Button from "../../../../components/Button/Button"
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+a
 
-### Advanced Configuration
+```js
+import Button from "@components/Button/Button"
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+He aquí el tutorial que lo explica: <https://medium.com/how-to-react/create-path-aliases-in-react-js-1256550c7d52>

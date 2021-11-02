@@ -15,16 +15,17 @@ const Container = styled(
   "& > .card": {
     backgroundColor: colors.secondary,
     borderColor: "transparent",
-    borderWidth: 0,
+    borderWidth: 1,
   },
 }));
 
 const CardComponentM = styled(({ className, children }) => (
   <CardComponent className={className}>{children}</CardComponent>
-))({
+))(({ theme: { colors } }) => ({
   flexDirection: "row",
+  ":hover": { borderColor: colors.primary },
   "@media (max-width: 991px)": { flexDirection: "column", height: "auto" },
-});
+}));
 
 const lineHeight = 1.2;
 const maxLinesWithImage = 4;

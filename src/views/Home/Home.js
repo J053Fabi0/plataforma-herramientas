@@ -60,6 +60,9 @@ export default function Home() {
     },
   ];
 
+  const muchoTexto =
+    "Some quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.";
+
   return (
     <Fragment>
       <Navbar></Navbar>
@@ -80,27 +83,17 @@ export default function Home() {
               <Card
                 imageURL="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsalmorejodigital.com%2Fwp-content%2Fuploads%2F2019%2F01%2FLogo-Genially.png&f=1&nofb=1"
                 title="Card Title"
-                text="Some quick example text to build on the card title and make up the bulk of the card's content."
+                text={muchoTexto}
                 buttonText="Explorar"
               ></Card>
+              <Card imageURL="" title="Card Title" text={muchoTexto} buttonText="Explorar"></Card>
               <Card
                 imageURL=""
                 title="Card Title"
                 text="Some quick example text to build on the card title and make up the bulk of the card's content."
                 buttonText="Explorar"
               ></Card>
-              <Card
-                imageURL=""
-                title="Card Title"
-                text="Some quick example text to build on the card title and make up the bulk of the card's content."
-                buttonText="Explorar"
-              ></Card>
-              <Card
-                imageURL=""
-                title="Card Title"
-                text="Some quick example text to build on the card title and make up the bulk of the card's content."
-                buttonText="Explorar"
-              ></Card>
+              <Card imageURL="" title="Card Title" text={muchoTexto} buttonText="Explorar"></Card>
               <Card
                 imageURL=""
                 title="Card Title"

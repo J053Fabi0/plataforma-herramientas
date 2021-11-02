@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "@views/Home/Home";
 import theme from "@styles/theme";
+import Home from "@views/Home/Home";
 import { ThemeProvider } from "@emotion/react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 

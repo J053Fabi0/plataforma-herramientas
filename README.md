@@ -41,7 +41,7 @@ Todas las páginas del sitio. Ej: El home o la de Contacto.
 
 
 ### `styles`
-Todos los archivos que exporten objetos que se puedan ocupar luego con JSS.
+Todos los archivos que exporten objetos que se puedan ocupar luego con emotion/styled.
 
 ```js
 import Colors from '@styles/colors';
@@ -54,7 +54,7 @@ export default {
 ```
 
 #### mixins.js
-<https://jarombek.com/blog/jun-30-2021-react-jss#mixins-for-reusable-styles>
+Son pequeños componentes de emotion/styled que se pueden ocupar en donde sea.
 
 ### Créditos
 
@@ -62,12 +62,14 @@ Basé la estructura en este blog: <https://www.taniarascia.com/react-architectur
 
 # Librerías ocupadas
 
-## JSS
-Resumen de toda la sintaxis: <https://cssinjs.org/jss-syntax>.
+## emotion/styled
+Es para darle estilo a los elementos de React sin las desventajas o líos de usar archivos CSS, ni la pérdida en preformance al usar CSS inline.
 
-Introducción práctica muy explicativa: <https://www.digitalocean.com/community/tutorials/how-to-style-react-components>
+Resumen de toda la sintaxis: <https://emotion.sh/docs/styled>.
 
-Otro tutorial: <https://jarombek.com/blog/jun-30-2021-react-jss>
+Cómo aplicar un tema: <https://emotion.sh/docs/theming>.
+
+Una introducción práctica: <https://mauriciogc.medium.com/react-formas-de-dise%C3%B1ar-componentes-de-react-desde-estilos-en-l%C3%ADnea-hasta-css-in-js-5cafe15b13fa#be17>. Esa es una gran página que muestra un resumen de muchas formas de crear estilos en React, de las cuales he creído más apropiado emotion/styled.
 
 ## `react-app-rewired` y `react-app-rewired-alias`
 
@@ -84,3 +86,18 @@ import Button from "@components/Button/Button"
 ```
 
 He aquí el tutorial que lo explica: <https://medium.com/how-to-react/create-path-aliases-in-react-js-1256550c7d52>
+
+## React Bootstrap
+
+Documentación: <https://react-bootstrap.github.io/components/alerts>.
+
+## React Bootstrap Icons
+Con esta librería se pueden ocupar los íconos de Bootstrap.
+
+Para usar un ícono lo importas así:
+
+```js
+import { ArrowRight } from 'react-bootstrap-icons';
+```
+
+Para saber qué íconos existen, búscalos en <https://icons.getbootstrap.com#icons>.

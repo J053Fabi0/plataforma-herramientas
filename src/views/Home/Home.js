@@ -1,8 +1,10 @@
 import Card from "./Card";
+import axios from "axios";
 import Filters from "./Filters";
 import SearchBar from "./SearchBar";
 import styled from "@emotion/styled";
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import { API_URL } from "@utils/constants";
 import Navbar from "@components/Navbar/Navbar";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -15,50 +17,12 @@ const IntroText = styled.p({
 });
 
 export default function Home() {
-  const filtersData = [
-    {
-      category: "Enfoque",
-      tags: [
-        {
-          tag: "Crear contenido",
-          href: "#",
-        },
-        {
-          tag: "Videos",
-          href: "#",
-        },
-        {
-          tag: "Encuestas",
-          href: "#",
-        },
-        {
-          tag: "Accesibilidad",
-          href: "#",
-        },
-      ],
-    },
-    {
-      category: "Tecnología",
-      tags: [
-        {
-          tag: "Crear contenido",
-          href: "#",
-        },
-        {
-          tag: "Videos",
-          href: "#",
-        },
-        {
-          tag: "Encuestas",
-          href: "#",
-        },
-        {
-          tag: "Accesibilidad",
-          href: "#",
-        },
-      ],
-    },
-  ];
+  const [filtersData, setFiltersData] = useState(false);
+
+  useEffect(
+    () => axios.get(API_URL + "/tagsAndCategories").then(({ data: { message: m } }) => setFiltersData(m)),
+    []
+  );
 
   const muchoTexto =
     "Some quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's contentSome quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.";
